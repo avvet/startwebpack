@@ -6,7 +6,9 @@ var extractPlugin = new ExtractTestPlugin({
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var webpack = require('webpack');
-// var webpack = require('webpack');
+
+const isProd = process.argv.indexOf('-p') !== -1;
+
 module.exports = {
   entry: {
     main:'./src/js/main.js'
@@ -17,6 +19,7 @@ module.exports = {
     filename: 'bundle.js'
     // publicPath: '/dist'
   },
+  devtool: isProd ? '' : 'eval-source-map',
   module: {
     rules: [
       {
