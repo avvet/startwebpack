@@ -9,9 +9,16 @@ import {func} from './second';
 let getPostsBtn = document.getElementById('my-button');
 let singlePostBtn = document.getElementById('single-post');
 
+let myParagraph = document.getElementById('my-paragraph');
+
 getPostsBtn.onclick = () => {
   httpService.getAllPosts();
 };
 singlePostBtn.onclick = () => {
-  httpService.getSinglePost(4);
+  // httpService.getSinglePost(4);
+  httpService.printParagraph(
+    (description) => {
+      myParagraph.innerText = description;
+    }
+  )
 };
