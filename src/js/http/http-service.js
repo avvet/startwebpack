@@ -27,6 +27,16 @@ class HttpServiceClass {
         console.log(error, 'MY ERROR');
       });
   }
+
+  printParagraph(callback) {
+    axios.get(BASE_URL + 'avvet')
+      .then(responce => {
+        callback(responce.data.description)
+      })
+      .catch(error => {
+        console.log(error, 'MY ERROR');
+      });
+  }
 }
 
 
