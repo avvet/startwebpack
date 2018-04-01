@@ -1,7 +1,9 @@
 import '../css/main.scss';
 import '../user.html';
-import 'jquery';
-// import '../css/second.css';
+import $ from 'jquery';
+import axios from "axios";
+
 import {func} from './second';
+
 func()
-console.log('Hello,world');
+console.log('Hello,world', $);
